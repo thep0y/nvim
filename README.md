@@ -29,3 +29,6 @@ rustup component add rust-analyzer
 
 在终端中执行`nvim`命令，等待自动配置完成即可。
 
+## 配置
+
+本仓库使用了`nvchad`作为模板，配置请查阅`NvChad`文档：https://nvchad.com/
