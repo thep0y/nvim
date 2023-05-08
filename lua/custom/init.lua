@@ -8,4 +8,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = format_sync_grp,
 })
 
-
+-- Pyright: Set venv path
+-- vim.env.VENV_PATH = ''

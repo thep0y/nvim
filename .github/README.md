@@ -31,4 +31,16 @@ rustup component add rust-analyzer
 
 ## 配置
 
+### Pyright
+
+我使用的是`miniconda`作为虚拟环境管理器，不同平台中虚拟环境的目录不同，所以不能统一配置此变量。
+
+在克隆本仓库后，必需设置`VENV_PATH`变量：
+
+- 取消`lua/custom/init.lua`中的`vim.env.VENV_PATH`注释，修改为你使用的虚拟环境目录
+
+- 通过系统或用户的环境变量设置
+
+### 其他
+
 本仓库使用了`nvchad`作为模板，配置请查阅`NvChad`文档：https://nvchad.com/
