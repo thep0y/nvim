@@ -4,8 +4,6 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local function get_venv_path()
   assert(vim.env.VENV_PATH ~= nil, 'pyright 需要配置 VENV_PATH 环境变量')
 
-  print(vim.env.VENV_PATH)
-
   return vim.env.VENV_PATH
 end
 

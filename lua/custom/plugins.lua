@@ -5,7 +5,19 @@ local plugins = {
       ensure_installed = {
         "rust-analyzer",
         "lua-language-server",
-        "pyright"
+        "pyright",
+        "gopls",
+        "typescript-language-server",
+        "vue-language-server",
+        "yaml-language-server",
+        "json-lsp",
+        "eslint-lsp",
+        "stylelint",
+        "bash-language-server",
+        "black",
+        "docker-compose-language-service",
+        "dockerfile-language-server",
+        "powershell-editor-services",
       }
     }
   },
