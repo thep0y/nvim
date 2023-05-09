@@ -41,6 +41,10 @@ rustup component add rust-analyzer
 
 - 通过系统或用户的环境变量设置
 
+### Go
+
+在不作任何额外配置时可对 go 文件正常格式化、导包等操作，但无法对 struct 添加标签，需要执行`:TSInstallSync go`安装 go 解析插件。
+
 ### 其他
 
 本仓库使用了`nvchad`作为模板，配置请查阅`NvChad`文档：https://nvchad.com/
