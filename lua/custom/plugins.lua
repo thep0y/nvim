@@ -47,6 +47,21 @@ local plugins = {
     end
   },
   {
+    "jose-elias-alvarez/typescript.nvim",
+    ft = "typescript",
+    dependencies = "neovim/nvim-lspconfig",
+    config = function (_, opts)
+      require("typescript").setup({
+        disable_commands = false, -- prevent the plugin from creating Vim commands
+        debug = false, -- enable debug logging for commands
+        go_to_source_definition = {
+          fallback = true, -- fall back to standard LSP definition on failure
+        },
+        server = opts, -- pass options to lspconfig's setup method
+      })
+    end
+  },
+  {
     "saecki/crates.nvim",
     ft = {"rust", "toml"},
     config = function (_, opts)
@@ -64,18 +79,24 @@ local plugins = {
     end
   },
   {
-    "ray-x/go.nvim",
-    dependencies = {  -- optional packages
-      "ray-x/guihua.lua",
-      "neovim/nvim-lspconfig",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function()
-      require("go").setup()
+    "jose-elias-alvarez/null-ls.nvim",
+    ft = "go",
+    opts = function ()
+      return require("custom.configs.null-ls")
     end,
-    event = {"CmdlineEnter"},
-    ft = {"go", 'gomod'},
-    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+    --config = function()
+    --    require("null-ls").setup()
+    --end,
+  },
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    config = function (_, opts)
+      require("gopher").setup(opts)
+    end,
+    build = function ()
+      vim.cmd([[silent! GoInstallDeps]])
+    end
   }
 }
 
