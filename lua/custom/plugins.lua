@@ -13,6 +13,7 @@ local plugins = {
         "json-lsp",
         "eslint-lsp",
         "stylelint",
+        "stylelint-lsp",
         "bash-language-server",
         "black",
         "docker-compose-language-service",
@@ -48,7 +49,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/typescript.nvim",
-    ft = "typescript",
+    ft = {"typescript", "vue"},
     dependencies = "neovim/nvim-lspconfig",
     config = function (_, opts)
       require("typescript").setup({
