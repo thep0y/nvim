@@ -43,6 +43,14 @@ rustup component add rust-analyzer
 
 ### Go
 
+对 Go 进行格式时需要安装三个插件：
+
+```bash
+go install mvdan.cc/gofumpt@latest
+go install github.com/incu6us/goimports-reviser/v3@latest
+go install github.com/segmentio/golines@latest
+```
+
 在不作任何额外配置时可对 go 文件正常格式化、导包等操作，但无法对 struct 添加标签，需要执行`:TSInstallSync go`安装 go 解析插件。
 
 ### 其他
