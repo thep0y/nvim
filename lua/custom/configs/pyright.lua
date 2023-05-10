@@ -8,10 +8,8 @@ local function get_venv_path()
 end
 
 local options = {
-  server = {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  },
+  on_attach = on_attach,
+  capabilities = capabilities,
   before_init = function(_, config)
     config.settings.python.venvPath = get_venv_path()
   end
