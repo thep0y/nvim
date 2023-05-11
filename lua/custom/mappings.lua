@@ -9,6 +9,9 @@ M.crates = {
       "update crates"
     },
     ["<C-s>"] = { ":w<CR>", "save" }
+  },
+  i = {
+    ["<C-s>"] = { "<Esc>:w<CR>a", "save" }
   }
 }
 
