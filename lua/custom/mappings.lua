@@ -11,6 +11,7 @@ M.crates = {
     ["<C-s>"] = { ":w<CR>", "save" },
     ["<A-j>"] = { ":m .+1<CR>==", "move lines down" },
     ["<A-k>"] = { ":m .-2<CR>==", "move lines up" },
+    ["<leader>d"] = { "\"_d", "delete lines without copying" },
   },
   i = {
     ["<C-s>"] = { "<Esc>:w<CR>a", "save" },
