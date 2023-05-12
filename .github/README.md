@@ -6,12 +6,17 @@
 
 克隆本仓库到`nvim`配置目录：
 
-```bash
-# windows
-git clone https://github.com/thep0y/nvim.git ~\AppData\Local\nvim --depth 1
-# Linux
-git clone https://github.com/thep0y/nvim.git ~/.config/nvim --depth 1
-```
+- Windows
+
+  ```powershell
+  git clone https://github.com/thep0y/nvim.git ~\AppData\Local\nvim --depth 1
+  ```
+
+- Linux
+
+  ```bash
+  git clone https://github.com/thep0y/nvim.git ~/.config/nvim --depth 1
+  ```
 
 安装**rust**语言服务器：
 
