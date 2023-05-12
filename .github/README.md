@@ -56,3 +56,7 @@ go install github.com/segmentio/golines@latest
 ### 其他
 
 本仓库使用了`nvchad`作为模板，配置请查阅`NvChad`文档：https://nvchad.com/
+
+## 快捷键
+
+我设置了一些常用的自定义快捷键，具体查看文件[mappings.lua](https://github.com/thep0y/nvim/blob/main/lua/custom/mappings.lua)。
