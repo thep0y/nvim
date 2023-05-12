@@ -8,7 +8,7 @@
 
 ```bash
 # windows
-git clone https://github.com/thep0y/nvim.git C:\Users\thepoy\AppData\Local\nvim --depth 1
+git clone https://github.com/thep0y/nvim.git ~\AppData\Local\nvim --depth 1
 # Linux
 git clone https://github.com/thep0y/nvim.git ~/.config/nvim --depth 1
 ```
