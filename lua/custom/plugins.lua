@@ -20,6 +20,7 @@ local plugins = {
         "dockerfile-language-server",
         "powershell-editor-services",
         "css-lsp",
+        "prettier",
       }
     }
   },
@@ -82,7 +83,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = { "go", "python" },
+    ft = { "go", "python", "scss" },
     opts = function()
       return require("custom.configs.null-ls")
     end,
@@ -100,29 +101,6 @@ local plugins = {
       vim.cmd([[silent! GoInstallDeps]])
     end
   },
-  {
-    "MunifTanjim/prettier.nvim",
-    ft = { "scss", "css", "html", "markdown", "yaml" },
-    config = function()
-      require("prettier").setup({
-        bin = 'prettier', -- or `'prettierd'` (v0.23.3+)
-        filetypes = {
-          "css",
-          "graphql",
-          "html",
-          "javascript",
-          "javascriptreact",
-          "json",
-          "less",
-          "markdown",
-          "scss",
-          "typescript",
-          "typescriptreact",
-          "yaml",
-        },
-      })
-    end
-  }
 }
 
 return plugins
