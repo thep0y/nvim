@@ -19,12 +19,13 @@ local plugins = {
         "docker-compose-language-service",
         "dockerfile-language-server",
         "powershell-editor-services",
+        "css-lsp",
       }
     }
   },
   {
     "neovim/nvim-lspconfig",
-    config = function ()
+    config = function()
       require("plugins.configs.lspconfig")
       require("custom.configs.lspconfig")
     end
@@ -32,7 +33,7 @@ local plugins = {
   {
     "rust-lang/rust.vim",
     ft = "rust",
-    init = function ()
+    init = function()
       vim.g.rustfmt_autosave = 1
     end
   },
@@ -40,32 +41,32 @@ local plugins = {
     "simrat39/rust-tools.nvim",
     ft = "rust",
     dependencies = "neovim/nvim-lspconfig",
-    opts = function ()
+    opts = function()
       return require "custom.configs.rust-tools"
     end,
-    config = function (_, opts)
+    config = function(_, opts)
       require("rust-tools").setup(opts)
     end
   },
   {
     "jose-elias-alvarez/typescript.nvim",
-    ft = {"typescript", "vue"},
+    ft = { "typescript", "vue" },
     dependencies = "neovim/nvim-lspconfig",
-    config = function (_, opts)
+    config = function(_, opts)
       require("typescript").setup({
         disable_commands = false, -- prevent the plugin from creating Vim commands
-        debug = false, -- enable debug logging for commands
+        debug = false,            -- enable debug logging for commands
         go_to_source_definition = {
-          fallback = true, -- fall back to standard LSP definition on failure
+          fallback = true,        -- fall back to standard LSP definition on failure
         },
-        server = opts, -- pass options to lspconfig's setup method
+        server = opts,            -- pass options to lspconfig's setup method
       })
     end
   },
   {
     "saecki/crates.nvim",
-    ft = {"rust", "toml"},
-    config = function (_, opts)
+    ft = { "rust", "toml" },
+    config = function(_, opts)
       local crates = require("crates")
       crates.setup(opts)
       crates.show()
@@ -73,16 +74,16 @@ local plugins = {
   },
   {
     "hrsh7th/nvim-cmp",
-    opts = function ()
+    opts = function()
       local M = require("plugins.configs.cmp")
-      table.insert(M.sources, {name = 'crates'})
+      table.insert(M.sources, { name = 'crates' })
       return M
     end
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
     ft = { "go", "python" },
-    opts = function ()
+    opts = function()
       return require("custom.configs.null-ls")
     end,
     --config = function()
@@ -92,11 +93,34 @@ local plugins = {
   {
     "olexsmir/gopher.nvim",
     ft = "go",
-    config = function (_, opts)
+    config = function(_, opts)
       require("gopher").setup(opts)
     end,
-    build = function ()
+    build = function()
       vim.cmd([[silent! GoInstallDeps]])
+    end
+  },
+  {
+    "MunifTanjim/prettier.nvim",
+    ft = { "scss", "css", "html", "markdown", "yaml" },
+    config = function()
+      require("prettier").setup({
+        bin = 'prettier', -- or `'prettierd'` (v0.23.3+)
+        filetypes = {
+          "css",
+          "graphql",
+          "html",
+          "javascript",
+          "javascriptreact",
+          "json",
+          "less",
+          "markdown",
+          "scss",
+          "typescript",
+          "typescriptreact",
+          "yaml",
+        },
+      })
     end
   }
 }

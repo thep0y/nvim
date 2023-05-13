@@ -8,7 +8,8 @@ local options = {
     stylelintplus = {
       autoFixOnSave = true
     }
-  }
+  },
+  filetypes = { "css", "less", "scss", "vue" }
 }
 
 return options
