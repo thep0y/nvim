@@ -32,7 +32,17 @@ rustup component add rust-analyzer
 > git config --global url."https://ghproxy.com/https://github.com".insteadOf "https://github.com"
 > ```
 
-在终端中执行`nvim`命令，等待自动配置完成即可。
+在终端中执行`nvim`命令，等待自动配置完成即可，具体支持的语言查看文档：https://github.com/nvim-treesitter/nvim-treesitter#supported-languages。
+
+### 语法高亮
+
+`neovim`中默认支持一些语言的语法高亮，但是支持的并不全，所以我们需要根据自己的需要去安装一些语法高亮插件，比如我想要对`tsx`文件进行语法高亮，需要执行：
+
+```bash
+:TSInstall tsx
+```
+
+当你打开的某个文件语法高亮有问题时，用此方法安装即可。
 
 ## 配置
 
