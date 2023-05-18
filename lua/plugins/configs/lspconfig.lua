@@ -5,6 +5,7 @@ local M = {}
 local utils = require "core.utils"
 
 -- export on_attach & capabilities for custom lspconfigs
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 M.on_attach = function(client, bufnr)
   utils.load_mappings("lspconfig", { buffer = bufnr })
@@ -15,6 +16,21 @@ M.on_attach = function(client, bufnr)
 
   if not utils.load_config().ui.lsp_semantic_tokens then
     client.server_capabilities.semanticTokensProvider = nil
+  end
+
+  -- 保存时格式化
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({
+      group = augroup,
+      buffer = bufnr,
+    })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format({ bufnr = bufnr })
+      end
+    })
   end
 end
 
