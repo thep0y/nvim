@@ -1,5 +1,12 @@
 local options = {
   filters = {
+    custom = {
+      "^.git$",
+      "^target$",
+      "^.vscode$",
+      "^node_modules$",
+      "^dist$",
+    },
     dotfiles = false,
     exclude = { vim.fn.stdpath "config" .. "/lua/custom" },
   },
