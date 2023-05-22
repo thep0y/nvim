@@ -1,7 +1,7 @@
 local lspconfig = require("lspconfig")
 
 local servers = { "pyright", "gopls", "tsserver", "volar", "eslint", "stylelint_lsp", "bashls", "jsonls",
-  "cssls" }
+  "cssls", "yamlls", }
 
 
 for _, lsp in ipairs(servers) do
