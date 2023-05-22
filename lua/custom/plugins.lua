@@ -101,6 +101,12 @@ local plugins = {
       vim.cmd([[silent! GoInstallDeps]])
     end
   },
+  {
+    "iamcco/markdown-preview.nvim",
+    ft = { "markdown" },
+    lazy = true,
+    build = "cd app && pnpm i && git reset --hard",
+  },
 }
 
 return plugins
