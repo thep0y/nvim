@@ -119,6 +119,9 @@ local plugins = {
       require('nvim-ts-autotag').setup()
     end
   },
+  {
+    "b0o/schemastore.nvim",
+  }
 }
 
 return plugins
