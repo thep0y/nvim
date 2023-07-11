@@ -20,7 +20,7 @@ local plugins = {
         "dockerfile-language-server",
         "powershell-editor-services",
         "css-lsp",
-        "prettier",
+        "prettierd",
       }
     }
   },
