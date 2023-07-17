@@ -88,6 +88,10 @@ local default_plugins = {
     end,
     config = function(_, opts)
       dofile(vim.g.base46_cache .. "syntax")
+
+      -- 使用 .gitconfig 中的配置拉取各个 parser 仓库
+      require("nvim-treesitter.install").prefer_git = true
+
       require("nvim-treesitter.configs").setup(opts)
     end,
   },
