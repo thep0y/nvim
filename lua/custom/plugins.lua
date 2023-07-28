@@ -15,6 +15,8 @@ local plugins = {
         "stylelint",
         "stylelint-lsp",
         "bash-language-server",
+        "shellcheck",
+        "shfmt",
         "black",
         "docker-compose-language-service",
         "dockerfile-language-server",
@@ -83,7 +85,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = { "go", "python", "scss", "typescript", "typescriptreact" },
+    ft = { "go", "python", "scss", "typescript", "typescriptreact", "sh" },
     opts = function()
       return require("custom.configs.null-ls")
     end,
