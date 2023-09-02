@@ -56,6 +56,12 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
+M.capabilities.workspace = {
+  didChangeWatchedFiles = {
+    dynamicRegistration = true,
+  },
+}
+
 require("lspconfig").lua_ls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,

@@ -15,12 +15,14 @@ local plugins = {
         "stylelint",
         "stylelint-lsp",
         "bash-language-server",
+        "shellcheck",
+        "shfmt",
         "black",
         "docker-compose-language-service",
         "dockerfile-language-server",
         "powershell-editor-services",
         "css-lsp",
-        "prettier",
+        "prettierd",
       }
     }
   },
@@ -83,7 +85,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = { "go", "python", "scss", "typescript", "typescriptreact" },
+    ft = { "go", "python", "scss", "typescript", "typescriptreact", "sh" },
     opts = function()
       return require("custom.configs.null-ls")
     end,
@@ -119,6 +121,9 @@ local plugins = {
       require('nvim-ts-autotag').setup()
     end
   },
+  {
+    "b0o/schemastore.nvim",
+  }
 }
 
 return plugins

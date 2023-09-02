@@ -6,9 +6,12 @@ local options = {
   capabilities = capabilities,
   settings = {
     yaml = {
-      schemas = {
-        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
+      schemaStore = {
+        -- You must disable built-in schemaStore support if you want to use
+        -- this plugin and its advanced options like `ignore`.
+        enable = false,
       },
+      schemas = require('schemastore').json.schemas(),
     },
   }
 }
