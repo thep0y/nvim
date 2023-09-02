@@ -8,10 +8,10 @@ local options = {
 
   indent = { enable = true },
 
-  autotag = {
-    enable = true,
-    filetypes = { 'html', 'javascript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue', 'markdown' },
-  },
+  -- autotag = {
+  --   enable = true,
+  --   filetypes = { 'html', 'javascript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue', 'markdown' },
+  -- },
 }
 
 return options

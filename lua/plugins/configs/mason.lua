@@ -12,7 +12,6 @@ local options = {
     download_url_template = "https://gg.thepoy.cc/https://github.com/%s/releases/download/%s/%s",
   },
 
-
   ui = {
     icons = {
       package_pending = " ",
