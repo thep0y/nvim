@@ -27,6 +27,7 @@ local plugins = {
         "stylua",
         "sqlls",
         "sql-formatter",
+        "taplo",
       },
     },
   },
@@ -89,7 +90,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = { "go", "python", "scss", "typescript", "typescriptreact", "sh", "markdown", "lua", "sql" },
+    ft = { "go", "python", "scss", "typescript", "typescriptreact", "sh", "markdown", "lua", "sql", "toml" },
     opts = function()
       return require "custom.configs.null-ls"
     end,
