@@ -6,10 +6,10 @@ local options = {
   capabilities = capabilities,
   settings = {
     stylelintplus = {
-      autoFixOnSave = true
-    }
+      autoFixOnSave = true,
+    },
   },
-  filetypes = { "css", "less", "scss", "vue" }
+  filetypes = { "css", "less", "scss", "vue" },
 }
 
 return options

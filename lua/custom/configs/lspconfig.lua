@@ -1,8 +1,7 @@
-local lspconfig = require("lspconfig")
+local lspconfig = require "lspconfig"
 
-local servers = { "pyright", "gopls", "tsserver", "volar", "eslint", "stylelint_lsp", "bashls", "jsonls",
-  "cssls", "yamlls", }
-
+local servers =
+  { "pyright", "gopls", "tsserver", "volar", "eslint", "stylelint_lsp", "bashls", "jsonls", "cssls", "yamlls" }
 
 for _, lsp in ipairs(servers) do
   local opts = require("custom.configs." .. lsp)

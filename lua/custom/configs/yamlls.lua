@@ -2,6 +2,7 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local options = {
+  single_file_support = true,
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -11,9 +12,9 @@ local options = {
         -- this plugin and its advanced options like `ignore`.
         enable = false,
       },
-      schemas = require('schemastore').json.schemas(),
+      schemas = require("schemastore").json.schemas(),
     },
-  }
+  },
 }
 
 return options
