@@ -23,6 +23,7 @@ local plugins = {
         "powershell-editor-services",
         "css-lsp",
         "prettierd",
+        "markdownlint",
       }
     }
   },
@@ -85,7 +86,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = { "go", "python", "scss", "typescript", "typescriptreact", "sh" },
+    ft = { "go", "python", "scss", "typescript", "typescriptreact", "sh", "markdown" },
     opts = function()
       return require("custom.configs.null-ls")
     end,
