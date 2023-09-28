@@ -24,6 +24,7 @@ local plugins = {
         "css-lsp",
         "prettierd",
         "markdownlint",
+        "stylua",
       }
     }
   },
@@ -86,7 +87,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = { "go", "python", "scss", "typescript", "typescriptreact", "sh", "markdown" },
+    ft = { "go", "python", "scss", "typescript", "typescriptreact", "sh", "markdown", "lua" },
     opts = function()
       return require("custom.configs.null-ls")
     end,
