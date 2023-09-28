@@ -11,6 +11,7 @@ local opts = {
     null_ls.builtins.formatting.shfmt,
     null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.formatting.stylua,
+    null_ls.builtins.formatting.sql_formatter,
   },
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then

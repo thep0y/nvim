@@ -25,6 +25,8 @@ local plugins = {
         "prettierd",
         "markdownlint",
         "stylua",
+        "sqlls",
+        "sql-formatter",
       },
     },
   },
@@ -87,7 +89,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = { "go", "python", "scss", "typescript", "typescriptreact", "sh", "markdown", "lua" },
+    ft = { "go", "python", "scss", "typescript", "typescriptreact", "sh", "markdown", "lua", "sql" },
     opts = function()
       return require "custom.configs.null-ls"
     end,
