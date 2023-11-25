@@ -18,4 +18,9 @@ end
 
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
+
+if vim.loop.os_uname().sysname == "Linux" then
+  vim.opt.clipboard = "unnamedplus" -- linux 上与系统剪贴板通信
+end
+
 require "plugins"
