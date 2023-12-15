@@ -13,6 +13,7 @@ local opts = {
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.sql_formatter,
     null_ls.builtins.formatting.taplo,
+    null_ls.builtins.diagnostics.todo_comments,
   },
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then

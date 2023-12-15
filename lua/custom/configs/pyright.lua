@@ -13,6 +13,9 @@ local options = {
   capabilities = capabilities,
   before_init = function(_, config)
     config.settings.python.venvPath = get_venv_path()
+    if vim.loop.os_uname().sysname ~= "Windows" then
+      config.settings.python.pythonPath = vim.env.HOME .. "/miniconda3/bin/python"
+    end
   end,
 }
 
