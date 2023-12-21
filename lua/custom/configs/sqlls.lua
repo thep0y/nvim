@@ -4,7 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local options = {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = "sql",
+  filetypes = { "sql" },
   single_file_support = true,
 }
 
