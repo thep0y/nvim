@@ -2,9 +2,13 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local function get_venv_path()
-  assert(vim.env.VENV_PATH ~= nil, "pyright 需要配置 VENV_PATH 环境变量")
+  local venv = vim.env.VENV_PATH
 
-  return vim.env.VENV_PATH
+  if venv == nil then
+    venv = vim.env.CONDA_PREFIX .. '/envs'
+  end
+
+  return venv
 end
 
 local options = {
@@ -12,9 +16,13 @@ local options = {
   on_attach = on_attach,
   capabilities = capabilities,
   before_init = function(_, config)
-    config.settings.python.venvPath = get_venv_path()
-    if vim.loop.os_uname().sysname ~= "Windows" then
-      config.settings.python.pythonPath = vim.env.HOME .. "/miniconda3/bin/python"
+    local venv_path = get_venv_path()
+    if venv_path ~= nil then
+      config.settings.python.venvPath = get_venv_path()
+    else
+      if vim.loop.os_uname().sysname ~= "Windows" then
+        config.settings.python.pythonPath = vim.env.HOME .. "/miniconda3/bin/python"
+      end
     end
   end,
 }
