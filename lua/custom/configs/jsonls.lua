@@ -1,5 +1,6 @@
 local capabilities = require("plugins.configs.lspconfig").capabilities
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local options = {
@@ -21,7 +22,17 @@ local options = {
   end,
   settings = {
     json = {
-      schemas = require("schemastore").json.schemas(),
+      schemas = require("schemastore").json.schemas {
+        extra = {
+          {
+            description = "Tauri Config",
+            fileMatch = { "tauri.conf.json" },
+            name = "tauri.conf.json",
+            -- url = "https://gg.thepoy.cc/https://raw.githubusercontent.com/tauri-apps/tauri/dev/tooling/cli/schema.json",
+            url = "https://raw.nuaa.cf/tauri-apps/tauri/dev/tooling/cli/schema.json",
+          },
+        },
+      },
       validate = { enable = true },
     },
   },
