@@ -24,3 +24,7 @@ if vim.loop.os_uname().sysname == "Linux" then
 end
 
 require "plugins"
+
+if vim.g.neovide then
+  vim.o.guifont = "Monaco Nerd Font:h16"
+end
