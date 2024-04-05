@@ -10,6 +10,9 @@ local options = {
         cargo = {
           features = "all",
         },
+        files = {
+          excludeDirs = { "target" },
+        },
       },
     },
   },

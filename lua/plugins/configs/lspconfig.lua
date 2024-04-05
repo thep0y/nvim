@@ -21,17 +21,17 @@ M.on_attach = function(client, bufnr)
   end
 
   -- 保存时格式化
-  if client.supports_method("textDocument/formatting") then
-    vim.api.nvim_clear_autocmds({
+  if client.supports_method "textDocument/formatting" then
+    vim.api.nvim_clear_autocmds {
       group = augroup,
       buffer = bufnr,
-    })
+    }
     vim.api.nvim_create_autocmd("BufWritePre", {
       group = augroup,
       buffer = bufnr,
       callback = function()
-        vim.lsp.buf.format({ bufnr = bufnr })
-      end
+        vim.lsp.buf.format { bufnr = bufnr }
+      end,
     })
   end
 end
@@ -56,11 +56,14 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-M.capabilities.workspace = {
-  didChangeWatchedFiles = {
-    dynamicRegistration = true,
-  },
-}
+if vim.loop.os_uname().sysname ~= "Windows_NT" then
+  M.capabilities.workspace = {
+    -- windows 中 rust 编译时会监听 target 目录内的变化造成批量报错
+    didChangeWatchedFiles = {
+      dynamicRegistration = true,
+    },
+  }
+end
 
 require("lspconfig").lua_ls.setup {
   on_attach = M.on_attach,
