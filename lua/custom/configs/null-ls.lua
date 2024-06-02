@@ -7,9 +7,9 @@ local opts = {
     null_ls.builtins.formatting.goimports_reviser,
     null_ls.builtins.formatting.golines,
     null_ls.builtins.formatting.black,
-    null_ls.builtins.formatting.prettierd.with {
-      extra_filetypes = { "svg", "toml" },
-    },
+    -- null_ls.builtins.formatting.prettierd.with {
+    --   extra_filetypes = { "svg", "toml" },
+    -- },
     null_ls.builtins.formatting.shfmt,
     null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.formatting.stylua,

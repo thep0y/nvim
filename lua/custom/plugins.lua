@@ -10,8 +10,8 @@ local plugins = {
         "typescript-language-server",
         "vue-language-server",
         "yaml-language-server",
-        "json-lsp",
-        "eslint-lsp",
+        -- "json-lsp",
+        -- "eslint-lsp",
         "stylelint",
         "stylelint-lsp",
         "bash-language-server",
@@ -22,12 +22,13 @@ local plugins = {
         "dockerfile-language-server",
         "powershell-editor-services",
         "css-lsp",
-        "prettierd",
+        -- "prettierd",
         "markdownlint",
         "stylua",
         "sqlls",
         "sql-formatter",
         "taplo",
+        "biome",
       },
     },
   },
@@ -106,6 +107,7 @@ local plugins = {
       "toml",
       "rust",
       "svg",
+      "yaml",
     },
     opts = function()
       return require "custom.configs.null-ls"
@@ -126,9 +128,12 @@ local plugins = {
   },
   {
     "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && npm install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
     ft = { "markdown" },
-    lazy = true,
-    build = "cd app && pnpm i && git reset --hard",
   },
   {
     "windwp/nvim-ts-autotag",

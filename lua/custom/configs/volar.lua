@@ -12,7 +12,8 @@ local options = {
 }
 
 if vue_is_installed then
-  options.filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
+  options.filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
+  options.init_options.vue.hybridMode = true
 end
 
 return options
