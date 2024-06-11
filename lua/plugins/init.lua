@@ -52,7 +52,7 @@ return {
     "mrcjkb/rustaceanvim",
     version = "^4", -- Recommended
     lazy = false,   -- This plugin is already lazy
-    config = function()
+    init = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       vim.g.rustaceanvim = {
         server = {
@@ -62,6 +62,13 @@ return {
             oa(client, bufnr)
           end,
           capabilities = capabilities,
+          default_settings = {
+            ["rust-analyzer"] = {
+              files = {
+                excludeDirs = { "target", "gen" },
+              },
+            }
+          }
         },
       }
     end
