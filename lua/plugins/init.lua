@@ -25,7 +25,7 @@ return {
         "css-lsp",
         "gopls",
         "html-lsp",
-        "json-ls",
+        "json-lsp",
         "lua-language-server",
         "prettierd", -- 格式化 markdown、html
         "pyright",
@@ -90,7 +90,7 @@ return {
   {
     "mrcjkb/rustaceanvim",
     version = "^4", -- Recommended
-    lazy = false, -- This plugin is already lazy
+    lazy = false,   -- This plugin is already lazy
     init = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       vim.g.rustaceanvim = {
