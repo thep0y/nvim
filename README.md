@@ -74,4 +74,4 @@ go install github.com/segmentio/golines@latest
 
 ## 快捷键
 
-我设置了一些常用的自定义快捷键，具体查看文件[mappings.lua](https://github.com/thep0y/nvim/blob/main/lua/custom/mappings.lua)。
+我设置了一些常用的自定义快捷键，具体查看文件[mappings.lua](lua/mappings.lua)。
