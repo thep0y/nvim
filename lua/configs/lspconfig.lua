@@ -11,6 +11,7 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
+    single_file_support = true,
   }
 end
 
