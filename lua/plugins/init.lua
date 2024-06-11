@@ -23,6 +23,9 @@ return {
         "biome",
         "black",
         "css-lsp",
+        -- "docker-compose-language-service",
+        -- "dockerfile-language-server",
+        -- "graphql-language-service-cli",
         "gopls",
         "html-lsp",
         "json-lsp",
@@ -45,21 +48,37 @@ return {
     event = "VeryLazy",
     opts = {
       ensure_installed = {
+        "bash",
         "css",
+        "csv",
+        "diff",
+        "dockerfile",
+        "git_config",
+        "gitcommit",
+        "gitignore",
+        "go",
+        "gomod",
+        "gosum",
+        "graphql",
         "html",
+        "ini",
         "javascript",
         "json",
+        "latex",
         "lua",
         "markdown",
         "python",
         "rust",
         "scss",
         "sql",
+        "ssh_config",
         "toml",
         "tsx",
         "typescript",
         "vim",
         "vimdoc",
+        "vue",
+        "xml",
         "yaml",
       },
       auto_install = true,
@@ -90,7 +109,7 @@ return {
   {
     "mrcjkb/rustaceanvim",
     version = "^4", -- Recommended
-    lazy = false,   -- This plugin is already lazy
+    lazy = false, -- This plugin is already lazy
     init = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       vim.g.rustaceanvim = {
