@@ -56,8 +56,10 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       vim.g.rustaceanvim = {
         server = {
-          on_attach = function(_, bufnr)
+          on_attach = function(client, bufnr)
             vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+            local oa = require("nvchad.configs.lspconfig").on_attach
+            oa(client, bufnr)
           end,
           capabilities = capabilities,
         },
