@@ -4,7 +4,7 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 
-local servers = { "biome", "cssls", "gopls", "html", "pyright", "tsserver" }
+local servers = { "biome", "cssls", "gopls", "html", "tsserver" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -40,8 +40,9 @@ lspconfig.yamlls.setup {
     yaml = {
       schemaStore = {
         enable = false,
+        url = "",
       },
-      schemas = require("schemastore").json.schemas(),
+      schemas = require("schemastore").yaml.schemas(),
     },
   },
 }
@@ -57,4 +58,26 @@ lspconfig.lua_ls.setup {
       },
     },
   },
+}
+
+lspconfig.pyright.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  single_file_support = true,
+  before_init = function(_, config)
+    local venv = vim.env.VENV_PATH
+
+    if venv == nil then
+      venv = vim.env.CONDA_PREFIX .. "/envs"
+    end
+
+    if venv ~= nil then
+      config.settings.python.venvPath = venv
+    else
+      if vim.loop.os_uname().sysname ~= "Windows" then
+        config.settings.python.pythonPath = vim.env.HOME .. "/miniconda3/bin/python"
+      end
+    end
+  end,
 }
