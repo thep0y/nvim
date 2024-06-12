@@ -64,7 +64,6 @@ return {
         "ini",
         "javascript",
         "json",
-        "latex",
         "lua",
         "markdown",
         "python",
