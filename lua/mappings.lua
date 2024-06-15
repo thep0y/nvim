@@ -30,8 +30,11 @@ map(
 map("n", "<leader>rcu", function()
   require("crates").upgrade_all_crates()
 end, { desc = "update crates" })
+-- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 map("i", "jk", "<ESC>")
 map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { desc = "move lines down" })
 map("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { desc = "move lines up" })
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "move lines down" })
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "move lines up" })
