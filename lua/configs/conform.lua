@@ -1,6 +1,8 @@
 local options = {
   formatters_by_ft = {
     css = { { "prettierd", "prettier" } },
+    scss = { { "prettierd", "prettier" } },
+    go = { "gofumpt", "goimports-reviser", "golines" },
     html = { { "prettierd", "prettier" } },
     javascript = { "biome" },
     json = { "biome" },
