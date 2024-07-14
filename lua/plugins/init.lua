@@ -163,4 +163,30 @@ return {
   },
 
   { "b0o/schemastore.nvim" },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    ft = {
+      "bash",
+      "css",
+      "go",
+      "javascript",
+      "javascriptreact",
+      "jsx",
+      "lua",
+      "python",
+      "rust",
+      "scss",
+      "tsx",
+      "typescript",
+      "typescriptreact",
+      "vue",
+    },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
 }
