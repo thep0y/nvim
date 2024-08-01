@@ -51,6 +51,7 @@ return {
         "bash",
         "css",
         "csv",
+        "dart",
         "diff",
         "dockerfile",
         "git_config",
@@ -170,6 +171,7 @@ return {
     ft = {
       "bash",
       "css",
+      "dart",
       "go",
       "javascript",
       "javascriptreact",
@@ -188,5 +190,15 @@ return {
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
     },
+  },
+
+  {
+    "akinsho/flutter-tools.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim", -- optional for vim.ui.select
+    },
+    config = true,
   },
 }
