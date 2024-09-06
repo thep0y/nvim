@@ -38,3 +38,10 @@ map("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { desc = "move lines up" })
 
 map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "move lines down" })
 map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "move lines up" })
+
+if vim.g.neovide then
+  map("n", "<C-v>", '"+P') -- Paste normal mode
+  map("v", "<C-v>", '"+P') -- Paste visual mode
+  map("c", "<C-v>", "<C-R>+") -- Paste command mode
+  map("i", "<C-v>", '<ESC>l"+Pli') -- Paste insert mode
+end
