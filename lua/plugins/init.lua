@@ -19,24 +19,6 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
-      ensure_installed = {
-        "biome",
-        "black",
-        "css-lsp",
-        -- "docker-compose-language-service",
-        -- "dockerfile-language-server",
-        -- "graphql-language-service-cli",
-        "gopls",
-        "html-lsp",
-        "json-lsp",
-        "lua-language-server",
-        "prettierd", -- 格式化 markdown、html
-        "pyright",
-        "stylua",
-        "taplo", -- toml
-        "typescript-language-server",
-        "yaml-language-server",
-      },
       github = {
         download_url_template = "https://gg.thepoy.cc/https://github.com/%s/releases/download/%s/%s",
       },

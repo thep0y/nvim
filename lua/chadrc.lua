@@ -16,4 +16,26 @@ M.base46 = {
 
 M.ui = {}
 
+M.mason = {
+  cmd = true,
+  pkgs = {
+    "biome",
+    "black",
+    "css-lsp",
+    -- "docker-compose-language-service",
+    -- "dockerfile-language-server",
+    -- "graphql-language-service-cli",
+    "gopls",
+    "html-lsp",
+    "json-lsp",
+    "lua-language-server",
+    "prettierd", -- 格式化 markdown、html
+    "pyright",
+    "stylua",
+    "taplo", -- toml
+    "typescript-language-server",
+    "yaml-language-server",
+  },
+}
+
 return M
