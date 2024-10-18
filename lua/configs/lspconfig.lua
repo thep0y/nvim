@@ -24,7 +24,7 @@ lspconfig.jsonls.setup {
             description = "Tauri Config",
             fileMatch = { "tauri.conf.json" },
             name = "tauri.conf.json",
-            url = "https://gg.thepoy.cc/https://raw.githubusercontent.com/tauri-apps/tauri/dev/tooling/cli/schema.json",
+            url = "https://gg.thepoy.cc/https://raw.githubusercontent.com/tauri-apps/tauri/dev/crates/tauri-cli/schema.json",
           },
         },
       },
