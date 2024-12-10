@@ -1,13 +1,13 @@
 local options = {
   formatters_by_ft = {
-    css = { { "prettierd", "prettier" } },
-    scss = { { "prettierd", "prettier" } },
+    css = { "prettierd", "prettier", stop_after_first = true },
+    scss = { "prettierd", "prettier", stop_after_first = true },
     go = { "gofumpt", "goimports-reviser", "golines" },
-    html = { { "prettierd", "prettier" } },
+    html = { "prettierd", "prettier", stop_after_first = true },
     javascript = { "biome" },
     json = { "biome" },
     lua = { "stylua" },
-    markdown = { { "prettierd", "prettier" } },
+    markdown = { "prettierd", "prettier", stop_after_first = true },
     python = { "black" },
     rust = { "rustfmt" },
     toml = { "taplo" },
