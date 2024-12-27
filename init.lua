@@ -39,7 +39,7 @@ vim.schedule(function()
 end)
 
 if vim.g.neovide then
-  vim.o.guifont = "Monaco Nerd Font:h16"
+  vim.o.guifont = "Monaco Nerd Font:h18"
   vim.g.neovide_input_macos_option_key_is_meta = "only_left"
 
   vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
@@ -50,7 +50,7 @@ if vim.g.neovide then
   vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
 end
 
-if vim.fn.has "wsl" then
+if vim.loop.os_uname().sysname == "Linux" and vim.fn.has "wsl" then
   vim.g.clipboard = {
     name = "WslClipboard",
     copy = {
